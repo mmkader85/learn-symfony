@@ -1,0 +1,34 @@
+_wdt:
+    resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
+    prefix:   /_wdt
+
+_profiler:
+    resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
+    prefix:   /_profiler
+
+_errors:
+    resource: "@TwigBundle/Resources/config/routing/errors.xml"
+    prefix:   /_error
+
+_main:
+    resource: routing.yml
+
+firstymlroute:
+    path: /site/router/yml-router/{page}
+    defaults:
+        _controller:    AppBundle:Router:ymlRouter
+        page:           1
+        title:          "This is title"
+    requirements:
+        page:           \d+
+
+controller_as_service:
+    path: /site/caservice
+    defaults:
+        _controller:    app.hello_controller:indexAction
+
+no_controller:
+    path: /site/no-controller
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: "nocontroller.html.twig"

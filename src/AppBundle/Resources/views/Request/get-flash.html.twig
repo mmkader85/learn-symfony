@@ -1,0 +1,13 @@
+{# src/AppBundle/Resources/views/get-flash.html.twig #}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="/mysymfony/web/app_dev.php/flash-css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block body %}
+    Flash messages appears below only once. Try refresh and it will go off.<br /><br />
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div class="flashNotice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+{% endblock %}

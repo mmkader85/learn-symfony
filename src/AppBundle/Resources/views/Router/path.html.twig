@@ -1,0 +1,14 @@
+{# path.html.twig #}
+
+<p>
+    Generate Relative URL :
+    <a href="{{ path('app-router-show', {'slug' : 'new-post'}) }}">
+        path('app-router-show', {'slug' : 'new-post'})
+    </a>
+</p>
+<p>
+    Generate Absolute URL :
+    <a href="{{ url('app-router-show', {'slug' : 'new-post'}) }}">
+        url('app-router-show', {'slug' : 'new-post'})
+    </a>
+</p>
