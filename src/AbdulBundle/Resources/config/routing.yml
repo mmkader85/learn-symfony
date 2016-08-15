@@ -1,0 +1,19 @@
+abdul_homepage:
+    path:       /
+    defaults:   { _controller: AbdulBundle:Default:index }
+
+abdul_save_product:
+    path:       /save
+    defaults:   { _controller: AbdulBundle:Product:save }
+
+abdul_get_product:
+    path:       /get/{productId}
+    defaults:
+        _controller: AbdulBundle:Product:getByPrimaryKey
+        requirements:
+            productId: \d+
+
+abdul_find_product:
+    path:       /find/{price}
+    defaults:
+        _controller: AbdulBundle:Product:find

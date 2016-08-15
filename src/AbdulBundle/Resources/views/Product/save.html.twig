@@ -1,0 +1,12 @@
+{# src/AbdulBundle/Resources/views/Product/save.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Congratulations! The following product has been saved. <br /><br />
+
+    Id: {{ products.0.id }}<br />
+    Name: {{ products.0.name }}<br />
+    Price: S${{ products.0.price }}<br />
+    Description: {{ products.0.description }}<br />
+{% endblock %}

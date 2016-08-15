@@ -1,0 +1,11 @@
+{# src/AbdulBundle/Resources/views/Product/getByPrimaryKey.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Retrieved Product Details <br /><br />
+    Id: {{ product.id }}<br />
+    Name: {{ product.name }}<br />
+    Price: S${{ product.price }}<br />
+    Description: {{ product.description }}<br />
+{% endblock %}
