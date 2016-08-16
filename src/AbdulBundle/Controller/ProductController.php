@@ -23,9 +23,9 @@ class ProductController extends Controller
         $product->setPrice($products[0]['price']);
         $product->setDescription($products[0]['description']);
 
-        $doctrineManager = $this->getDoctrine()->getManager();
-        $doctrineManager->persist($product);
-        $doctrineManager->flush();
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($product);
+        $em->flush();
         $products[0]['id'] = $product->getId();
 
         return $this->render('AbdulBundle:Product:save.html.twig',
@@ -37,10 +37,12 @@ class ProductController extends Controller
 
     public function getByPrimaryKeyAction($productId)
     {
-        $productRepo = $this->getDoctrine()->getRepository('AbdulBundle:Product');
-        $product = $productRepo->find($productId);
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AbdulBundle:Product')->find($productId);
 
-        dump($product);
+        if(!$product) {
+            throw $this->createNotFoundException('Product not found with id : '.$productId);
+        }
 
         return $this->render('AbdulBundle:Product:getByPrimaryKey.html.twig',
             array(
@@ -51,8 +53,8 @@ class ProductController extends Controller
 
     public function findAction($price)
     {
-        $productRepo = $this->getDoctrine()->getRepository('AbdulBundle:Product');
-        $product = $productRepo->findBy(
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AbdulBundle:Product')->findBy(
             array(
                 'price' => $price,
             )
@@ -61,5 +63,39 @@ class ProductController extends Controller
         var_dump($product);
 
         return new Response('Find Action');
+    }
+
+    public function updateAction($id, $price)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AbdulBundle:Product')->find($id);
+
+        if(!$product) {
+            throw $this->createNotFoundException('Product not found with id : '.$id);
+        }
+
+        $product->setPrice($price);
+        $em->flush();
+
+        return $this->render('AbdulBundle:Product:getByPrimaryKey.html.twig',
+            array(
+                'product' => $product
+            )
+        );
+    }
+
+    public function deleteAction($productId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AbdulBundle:Product')->find($productId);
+
+        if(!$product) {
+            throw $this->createNotFoundException('Product not found with id : '.$productId);
+        }
+
+        $em->remove($product);
+        $em->flush();
+
+        return new Response('Product with ID '.$productId.' has been successfully deleted');
     }
 }

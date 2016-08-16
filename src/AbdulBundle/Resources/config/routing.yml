@@ -17,3 +17,18 @@ abdul_find_product:
     path:       /find/{price}
     defaults:
         _controller: AbdulBundle:Product:find
+
+abdul_update_product:
+    path:       /update/{id}/{price}
+    defaults:
+        _controller: AbdulBundle:Product:update
+        requirements:
+            id: \d+
+            price: "[0-9\.]+"
+
+abdul_delete_product:
+    path:       /delete/{productId}
+    defaults:
+        _controller: AbdulBundle:Product:delete
+        requirements:
+            productId: \d+
