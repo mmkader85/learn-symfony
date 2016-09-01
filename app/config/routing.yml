@@ -2,6 +2,10 @@ abdul:
     resource: "@AbdulBundle/Resources/config/routing.yml"
     prefix:   /
 
+abdul_annotation:
+    resource: "@AbdulBundle/Controller"
+    type:     annotation
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

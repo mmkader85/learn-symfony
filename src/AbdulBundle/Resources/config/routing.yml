@@ -32,3 +32,18 @@ abdul_delete_product:
         _controller: AbdulBundle:Product:delete
         requirements:
             productId: \d+
+
+abdul_createquery_product:
+    path:       /create-query/{minPrice}
+    defaults:
+        _controller: AbdulBundle:Product:createQuery
+
+abdul_querybuilder_product:
+    path:       /query-builder/{minPrice}
+    defaults:
+        _controller: AbdulBundle:Product:queryBuilder
+
+abdul_customrepofunction_product:
+    path:       /custom-repo-function
+    defaults:
+        _controller: AbdulBundle:Product:customRepoFunction

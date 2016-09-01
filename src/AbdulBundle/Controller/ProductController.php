@@ -98,4 +98,49 @@ class ProductController extends Controller
 
         return new Response('Product with ID '.$productId.' has been successfully deleted');
     }
+
+    public function createQueryAction($minPrice)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT p FROM AbdulBundle:Product p WHERE p.price > :price ORDER BY p.price ASC'
+        )->setParameter('price', $minPrice);
+
+        //$result = $query->getResult();
+        //$result = $query->setMaxResults(2)->getResult();
+        $result = $query->setMaxResults(1)->getOneOrNullResult();
+
+        dump($result);
+
+        return new Response();
+    }
+
+    public function queryBuilderAction($minPrice)
+    {
+        $productRepo = $this->getDoctrine()->getManager()->getRepository('AbdulBundle:Product');
+        $query = $productRepo->createQueryBuilder('p')
+            ->where('p.price > :price')
+            ->setParameter('price', $minPrice)
+            ->orderBy('p.price', 'ASC')
+            ->getQuery();
+
+        $result = $query->getResult();
+        //$result = $query->setMaxResults(2)->getResult();
+        //$result = $query->setMaxResults(1)->getOneOrNullResult();
+
+        dump($result);
+
+        return new Response();
+    }
+
+    public function customRepoFunctionAction()
+    {
+        $products = $this->getDoctrine()->getManager()
+            ->getRepository('AbdulBundle:Product')
+            ->findAllOrderedByPrice();
+
+        dump($products);
+
+        return new Response();
+    }
 }
