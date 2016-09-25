@@ -47,3 +47,14 @@ abdul_customrepofunction_product:
     path:       /custom-repo-function
     defaults:
         _controller: AbdulBundle:Product:customRepoFunction
+        
+abdul_save_comm_pref_new:
+    path:       /save-comm-pref-new
+    defaults:   { _controller: AbdulBundle:CommunicationPreferencesNew:save }
+    
+abdul_get_comm_pref_new:
+    path:       /get-comm-pref-new/{personId}
+    defaults:
+        _controller: AbdulBundle:CommunicationPreferencesNew:getByPrimaryKey
+        requirements:
+            personId: \d+
