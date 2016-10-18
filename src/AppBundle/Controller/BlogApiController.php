@@ -8,6 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class BlogApiController
+ * @package AppBundle\Controller
+ * Chapter 6 - Controller 6
+ */
 class BlogApiController extends Controller
 {
     /**

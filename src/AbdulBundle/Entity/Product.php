@@ -3,9 +3,12 @@
 namespace AbdulBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraint as Assert;
 
 /**
  * Product
+ * php app/console doctrine:generate:entity
+ * php app/console doctrine:generate:entities AbdulBundle/Entity/Product
  *
  * @ORM\Table(name="product")
  * @ORM\Entity(repositoryClass="AbdulBundle\Repository\ProductRepository")

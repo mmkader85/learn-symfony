@@ -7,6 +7,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Class HelloController
+ * @package AppBundle\Controller
+ * Chapter 5 - Controller 3
+ */
 class HelloController extends Controller
 {
     /**

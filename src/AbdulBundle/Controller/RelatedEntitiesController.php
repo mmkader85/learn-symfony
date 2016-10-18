@@ -10,6 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * Class RelatedEntitiesController
+ * @package AbdulBundle\Controller
+ * Chapter 10 - Controller 11
+ */
 class RelatedEntitiesController extends Controller
 {
     /**

@@ -6,6 +6,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class BlogController
+ * @package AppBundle\Controller
+ * Chapter 6 - Controller 5
+ */
 class BlogController extends Controller
 {
     /**

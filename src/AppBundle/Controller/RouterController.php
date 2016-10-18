@@ -8,6 +8,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
+/**
+ * Class RouterController
+ * @package AppBundle\Controller
+ * Chapter 6 - Controller 7
+ */
 class RouterController extends Controller
 {
 

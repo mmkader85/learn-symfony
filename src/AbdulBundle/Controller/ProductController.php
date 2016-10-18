@@ -1,11 +1,24 @@
 <?php
 
+/**
+ * Using Entity/Entities
+ * Create Query
+ * Query Builder
+ * Custom Repository Function
+ */
+
 namespace AbdulBundle\Controller;
 
 use AbdulBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class ProductController
+ * @package AbdulBundle\Controller
+ * php app/console doctrine:generate:entity
+ * Chapter 10 - Controller 10
+ */
 class ProductController extends Controller
 {
     public function saveAction()
@@ -142,5 +155,13 @@ class ProductController extends Controller
         dump($products);
 
         return new Response();
+    }
+
+    public function validateAction()
+    {
+        $product = new Product();
+        $product->setPrice(20.05);
+
+
     }
 }

@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
  * @package AppBundle\Controller
  * When a controller is defined as service in services.yml, Symfony's base 'Controller' cannot be extended.
  * So, any service need for this controller has to be manually injected. See __construct().
+ * Chapter 6 - Controller 8
  */
 class ServiceController
 {

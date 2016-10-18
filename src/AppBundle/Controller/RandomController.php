@@ -7,6 +7,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Class RandomController
+ * @package AppBundle\Controller
+ * Chapter 4 - Controller 2
+ */
 class RandomController extends Controller
 {
     /**
