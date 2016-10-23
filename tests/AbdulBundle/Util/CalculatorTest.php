@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\AbdulBundle\Util;
+namespace AbdulBundle\Tests\Util;
 
 use AbdulBundle\Util\Calculator;
 
