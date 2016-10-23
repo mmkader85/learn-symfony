@@ -2,6 +2,7 @@
 
 namespace BlogBundle\Controller;
 
+use BlogBundle\Service\BlogService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
@@ -14,6 +15,11 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BlogBundle:Default:index.html.twig');
+        BlogService::sum(10, 15);
+        $data['sum1'] = BlogService::getSum();
+
+        BlogService::sum(20, 25);
+        $data['sum2'] = BlogService::getSum();
+        return $this->render('BlogBundle:Default:index.html.twig', $data);
     }
 }

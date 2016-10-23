@@ -24,7 +24,7 @@ abdul_update_product:
         _controller: AbdulBundle:Product:update
         requirements:
             id: \d+
-            price: "[0-9\.]+"
+            price: "[0-9\\.]+"
 
 abdul_delete_product:
     path:       /delete/{productId}
