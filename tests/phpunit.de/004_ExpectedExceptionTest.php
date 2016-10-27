@@ -4,17 +4,13 @@ namespace PhpunitDe\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class CannotBeZeroException extends \Exception
-{
-}
-
 class ExpectedExceptionTest extends TestCase
 {
     /**
-     * @expectedException CannotBeZeroException
+     * @expectedException PHPUnit_Framework_Error
      */
     public function testException()
     {
-        throw new CannotBeZeroException('User ID cannot be zero');
+        include 'it_doesnt_exit.php';
     }
 }
