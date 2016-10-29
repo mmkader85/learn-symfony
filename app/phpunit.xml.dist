@@ -10,6 +10,9 @@
 >
     <php>
         <ini name="error_reporting" value="E_ALL" />
+        <var name="DB_DSN" value="mysql:dbname=mysymfony;host=localhost" />
+        <var name="DB_USER" value="root" />
+        <var name="DB_PASS" value="" />
         <!--
             <server name="KERNEL_DIR" value="/path/to/your/app/" />
         -->

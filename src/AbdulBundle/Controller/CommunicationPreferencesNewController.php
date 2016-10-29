@@ -12,12 +12,12 @@ class CommunicationPreferencesNewController extends Controller
     {
         $records = array(
             0 => array(
-                'id' => 4,
+                'id' => 6,
                 'market_news' => 'WEEKLY',
                 'market_news_sms' => 1
             ),
             1 => array(
-                'id' => 5,
+                'id' => 7,
                 'market_news' => 'DAILY',
                 'market_news_sms' => 0
             )
@@ -105,5 +105,13 @@ class CommunicationPreferencesNewController extends Controller
         $em->flush();
 
         return new Response('Product with ID '.$productId.' has been successfully deleted');
+    }
+
+    public function pdoSave()
+    {
+        $pdo = new \PDO('mysql:dbname=mysymfony;host:localhost', 'root', '');
+        $rowAffected = $pdo->exec('insert into communication_preferences_new values (6, "WEEKLY", 1)');
+
+        return $rowAffected;
     }
 }

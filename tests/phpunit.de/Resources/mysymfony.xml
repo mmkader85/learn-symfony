@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="mysymfony">
+	<table_data name="communication_preferences_new">
+	<row>
+		<field name="person_id">1</field>
+		<field name="market_news">WEEKLY</field>
+		<field name="market_news_sms">1</field>
+	</row>
+	<row>
+		<field name="person_id">2</field>
+		<field name="market_news">WEEKLY</field>
+		<field name="market_news_sms">1</field>
+	</row>
+	<row>
+		<field name="person_id">3</field>
+		<field name="market_news">DAILY</field>
+		<field name="market_news_sms">0</field>
+	</row>
+	<row>
+		<field name="person_id">4</field>
+		<field name="market_news">WEEKLY</field>
+		<field name="market_news_sms">1</field>
+	</row>
+	<row>
+		<field name="person_id">5</field>
+		<field name="market_news">WEEKLY</field>
+		<field name="market_news_sms">1</field>
+	</row>
+	</table_data>
+	<table_data name="product">
+	<row>
+		<field name="id">2</field>
+		<field name="name">Logitech Mouse</field>
+		<field name="price">25.00</field>
+		<field name="description">Brand new Logitech bluetooth mouse.</field>
+		<field name="category_id" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">Logitech Mouse</field>
+		<field name="price">19.00</field>
+		<field name="description">Brand new Logitech bluetooth mouse.</field>
+		<field name="category_id" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="name">Logitech Mouse</field>
+		<field name="price">19.50</field>
+		<field name="description">Brand new Logitech mouse.</field>
+		<field name="category_id" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="name">Logitech Keyboard</field>
+		<field name="price">20.50</field>
+		<field name="description">Wireless and Backlight Keyboard</field>
+		<field name="category_id">1</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
