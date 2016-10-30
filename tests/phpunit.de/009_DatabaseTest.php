@@ -12,7 +12,8 @@ class DatabaseTest extends \PHPUnit_Extensions_Database_TestCase
     private $cpnTable = 'communication_preferences_new';
 
     /**
-     * Returns the test database connection
+     * Returns the test database connection.
+     * GLOBALS are defined under php > var in phpunit.xml.dist
      * @return \PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
      */
     protected function getConnection()
@@ -40,6 +41,9 @@ class DatabaseTest extends \PHPUnit_Extensions_Database_TestCase
         return $this->createMySQLXMLDataSet($xmlDataSet);
     }
 
+    /**
+     * Tests row insert.
+     */
     public function testInsert()
     {
         $currentRowCount = $this->getConnection()->getRowCount($this->cpnTable);
@@ -48,5 +52,16 @@ class DatabaseTest extends \PHPUnit_Extensions_Database_TestCase
         $rowInserted = $cpn->pdoSave();
 
         static::assertEquals(($currentRowCount+$rowInserted), ($this->getConnection()->getRowCount($this->cpnTable)));
+    }
+
+    /**
+     * Tests the data in the table with the data set.
+     */
+    public function testQueryTable()
+    {
+        $expectedTable = $this->getDataSet()->getTable('product');
+        $actualTable = $this->getConnection()->createQueryTable('product', 'select * from product');
+
+        static::assertTablesEqual($expectedTable, $actualTable);
     }
 }

@@ -19,4 +19,3 @@ class StackTest extends TestCase
         static::assertEquals(0, count($stack));
     }
 }
-?>

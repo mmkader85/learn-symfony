@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
+<!--suppress ProblematicWhitespace, InconsistentLineSeparators -->
 <mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <database name="mysymfony">
+	<table_data name="category">
+	<row>
+		<field name="id">1</field>
+		<field name="name">Computer Peripherals</field>
+	</row>
+	</table_data>
 	<table_data name="communication_preferences_new">
 	<row>
 		<field name="person_id">1</field>
@@ -27,6 +34,8 @@
 		<field name="market_news">WEEKLY</field>
 		<field name="market_news_sms">1</field>
 	</row>
+	</table_data>
+	<table_data name="post">
 	</table_data>
 	<table_data name="product">
 	<row>

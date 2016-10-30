@@ -157,11 +157,14 @@ class ProductController extends Controller
         return new Response();
     }
 
-    public function validateAction()
+    public function getOneProductAction()
     {
-        $product = new Product();
-        $product->setPrice(20.05);
+        $em = $this->getDoctrine()->getManager();
+        $minPrice = 10;
+        $query = $em->createQuery('SELECT p FROM AbdulBundle:Product p WHERE p.price > :price')
+            ->setParameter('price', $minPrice);
+        $result = $query->setMaxResults(1)->getOneOrNullResult();
 
-
+        return $result;
     }
 }
