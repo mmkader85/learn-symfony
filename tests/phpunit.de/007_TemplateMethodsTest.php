@@ -5,7 +5,8 @@ namespace PhpunitDe\Tests;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class TemplateMethodsTest
+ * Class TemplateMethodsTest.
+ * Purpose of this class is to demonstrate the sequence of TemplateMethods.
  * @package PhpunitDe\Tests
  */
 class TemplateMethodsTest extends TestCase

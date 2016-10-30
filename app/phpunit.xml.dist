@@ -23,6 +23,7 @@
             <file>../tests/phpunit.de/StackTest.php</file>
             <directory>../tests/*Bundle</directory>
             <directory>../tests/phpunit.de</directory>
+            <exclude>../tests/phpunit.de/007_TemplateMethodsTest.php</exclude>
         </testsuite>
     </testsuites>
 
