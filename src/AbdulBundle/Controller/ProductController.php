@@ -36,6 +36,7 @@ class ProductController extends Controller
         $product->setPrice($products[0]['price']);
         $product->setDescription($products[0]['description']);
 
+        // @codeCoverageIgnoreStart
         $em = $this->getDoctrine()->getManager();
         $em->persist($product);
         $em->flush();
@@ -46,6 +47,7 @@ class ProductController extends Controller
                 'products' => $products
             )
         );
+        // @codeCoverageIgnoreEnd
     }
 
     public function getByPrimaryKeyAction($productId)

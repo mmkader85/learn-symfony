@@ -19,6 +19,10 @@ class ClassForMockTest
         return $arg1;
     }
 
+    /**
+     * @return $this
+     * @codeCoverageIgnore
+     */
     public function getClassObject()
     {
         return $this;
