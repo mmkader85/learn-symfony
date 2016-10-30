@@ -2,6 +2,7 @@
 
 namespace PhpunitDe\Tests;
 
+use AbdulBundle\Controller\ProductController;
 use AbdulBundle\Util\Subject;
 use PHPUnit\Framework\TestCase;
 
@@ -164,5 +165,13 @@ class MockAndStubTest extends TestCase
 
         $stub->set('foo', 21);
         $stub->set('bar', 22);
+    }
+
+    public function testGetOneProductAction()
+    {
+        $productController = new ProductController();
+        $product = $productController->getOneProductAction();
+
+        var_dump($product);
     }
 }
