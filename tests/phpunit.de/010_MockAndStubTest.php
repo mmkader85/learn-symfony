@@ -2,7 +2,6 @@
 
 namespace PhpunitDe\Tests;
 
-use AbdulBundle\Controller\ProductController;
 use AbdulBundle\Util\Subject;
 use PHPUnit\Framework\TestCase;
 
