@@ -40,8 +40,8 @@ class HelloController extends Controller
         
         //return $this->redirectToRoute('random-number');
         //return $this->redirect($this->generateUrl('random-number'));
-        //return new \Symfony\Component\HttpFoundation\RedirectResponse($this->generateUrl('random-number'));
-        return new \Symfony\Component\HttpFoundation\RedirectResponse('http://www.propertyguru.com.sg');
+        return new \Symfony\Component\HttpFoundation\RedirectResponse($this->generateUrl('random-number'));
+        //return new \Symfony\Component\HttpFoundation\RedirectResponse('http://www.propertyguru.com.sg');
     }
     
     /**

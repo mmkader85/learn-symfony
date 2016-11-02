@@ -166,11 +166,11 @@ class MockAndStubTest extends TestCase
         $stub->set('bar', 22);
     }
 
-    public function testGetOneProductAction()
+    /*public function testGetOneProductAction()
     {
         $productController = new ProductController();
         $product = $productController->getOneProductAction();
 
         var_dump($product);
-    }
+    }*/
 }

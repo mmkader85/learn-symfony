@@ -1,5 +1,6 @@
 {# src/AbdulBundle/Resources/views/Default/index.html.twig #}
 {% extends 'base.html.twig' %}
 {% block body %}
-    Hello World!
+    Hello World! <br />
+    <a href="{{ path('abdul_get_product', {'productId' : 2}) }}" id="productLink">Click to see product 2</a>
 {% endblock %}
